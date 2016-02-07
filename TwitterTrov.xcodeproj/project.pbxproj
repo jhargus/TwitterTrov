@@ -16,6 +16,14 @@
 		AD1A7F501C66E7FE00A88349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1A7F4E1C66E7FE00A88349 /* LaunchScreen.storyboard */; };
 		AD1A7F5B1C66E7FE00A88349 /* TwitterTrovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A7F5A1C66E7FE00A88349 /* TwitterTrovTests.swift */; };
 		AD1A7F661C66E7FE00A88349 /* TwitterTrovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A7F651C66E7FE00A88349 /* TwitterTrovUITests.swift */; };
+		AD1A7F821C66F01500A88349 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1A7F811C66F01500A88349 /* DataManager.swift */; };
+		AD3DE5B21C670DD200B56416 /* TRVUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5AE1C670DD200B56416 /* TRVUser+CoreDataProperties.swift */; };
+		AD3DE5B31C670DD200B56416 /* TRVUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5AF1C670DD200B56416 /* TRVUser.swift */; };
+		AD3DE5B41C670DD200B56416 /* TRVTweets+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5B01C670DD200B56416 /* TRVTweets+CoreDataProperties.swift */; };
+		AD3DE5B51C670DD200B56416 /* TRVTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5B11C670DD200B56416 /* TRVTweets.swift */; };
+		AD3DE5BA1C670F7C00B56416 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5B81C670F7C00B56416 /* LoginViewController.swift */; };
+		AD3DE5BD1C67157B00B56416 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5BC1C67157B00B56416 /* TweetTableViewController.swift */; };
+		AD3DE5BF1C6718AA00B56416 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3DE5BE1C6718AA00B56416 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		AD1A7F611C66E7FE00A88349 /* TwitterTrovUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterTrovUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1A7F651C66E7FE00A88349 /* TwitterTrovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTrovUITests.swift; sourceTree = "<group>"; };
 		AD1A7F671C66E7FE00A88349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1A7F811C66F01500A88349 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AD3DE5AE1C670DD200B56416 /* TRVUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TRVUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AD3DE5AF1C670DD200B56416 /* TRVUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRVUser.swift; sourceTree = "<group>"; };
+		AD3DE5B01C670DD200B56416 /* TRVTweets+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TRVTweets+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AD3DE5B11C670DD200B56416 /* TRVTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRVTweets.swift; sourceTree = "<group>"; };
+		AD3DE5B81C670F7C00B56416 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AD3DE5BC1C67157B00B56416 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
+		AD3DE5BE1C6718AA00B56416 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +117,13 @@
 		AD1A7F3F1C66E7FE00A88349 /* TwitterTrov */ = {
 			isa = PBXGroup;
 			children = (
+				AD1A7F751C66EA1000A88349 /* Data Model */,
+				AD1A7F741C66E9D400A88349 /* View Controllers */,
+				AD1A7F731C66E9B800A88349 /* xibs */,
 				AD1A7F401C66E7FE00A88349 /* AppDelegate.swift */,
-				AD1A7F451C66E7FE00A88349 /* MasterViewController.swift */,
-				AD1A7F471C66E7FE00A88349 /* DetailViewController.swift */,
-				AD1A7F491C66E7FE00A88349 /* Main.storyboard */,
 				AD1A7F4C1C66E7FE00A88349 /* Assets.xcassets */,
-				AD1A7F4E1C66E7FE00A88349 /* LaunchScreen.storyboard */,
 				AD1A7F511C66E7FE00A88349 /* Info.plist */,
-				AD1A7F421C66E7FE00A88349 /* TwitterTrov.xcdatamodeld */,
+				AD3DE5BE1C6718AA00B56416 /* AppManager.swift */,
 			);
 			path = TwitterTrov;
 			sourceTree = "<group>";
@@ -129,6 +144,47 @@
 				AD1A7F671C66E7FE00A88349 /* Info.plist */,
 			);
 			path = TwitterTrovUITests;
+			sourceTree = "<group>";
+		};
+		AD1A7F731C66E9B800A88349 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A7F491C66E7FE00A88349 /* Main.storyboard */,
+				AD1A7F4E1C66E7FE00A88349 /* LaunchScreen.storyboard */,
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
+		AD1A7F741C66E9D400A88349 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A7F451C66E7FE00A88349 /* MasterViewController.swift */,
+				AD1A7F471C66E7FE00A88349 /* DetailViewController.swift */,
+				AD3DE5B81C670F7C00B56416 /* LoginViewController.swift */,
+				AD3DE5BC1C67157B00B56416 /* TweetTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AD1A7F751C66EA1000A88349 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD1A7F761C66EA2000A88349 /* Managed Objects */,
+				AD1A7F421C66E7FE00A88349 /* TwitterTrov.xcdatamodeld */,
+				AD1A7F811C66F01500A88349 /* DataManager.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		AD1A7F761C66EA2000A88349 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				AD3DE5AE1C670DD200B56416 /* TRVUser+CoreDataProperties.swift */,
+				AD3DE5AF1C670DD200B56416 /* TRVUser.swift */,
+				AD3DE5B01C670DD200B56416 /* TRVTweets+CoreDataProperties.swift */,
+				AD3DE5B11C670DD200B56416 /* TRVTweets.swift */,
+			);
+			name = "Managed Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +319,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1A7F441C66E7FE00A88349 /* TwitterTrov.xcdatamodeld in Sources */,
+				AD3DE5B21C670DD200B56416 /* TRVUser+CoreDataProperties.swift in Sources */,
+				AD1A7F821C66F01500A88349 /* DataManager.swift in Sources */,
+				AD3DE5BD1C67157B00B56416 /* TweetTableViewController.swift in Sources */,
+				AD3DE5B31C670DD200B56416 /* TRVUser.swift in Sources */,
+				AD3DE5B51C670DD200B56416 /* TRVTweets.swift in Sources */,
 				AD1A7F411C66E7FE00A88349 /* AppDelegate.swift in Sources */,
+				AD3DE5BF1C6718AA00B56416 /* AppManager.swift in Sources */,
 				AD1A7F461C66E7FE00A88349 /* MasterViewController.swift in Sources */,
 				AD1A7F481C66E7FE00A88349 /* DetailViewController.swift in Sources */,
+				AD3DE5B41C670DD200B56416 /* TRVTweets+CoreDataProperties.swift in Sources */,
+				AD3DE5BA1C670F7C00B56416 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +554,7 @@
 				AD1A7F6C1C66E7FE00A88349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD1A7F6D1C66E7FE00A88349 /* Build configuration list for PBXNativeTarget "TwitterTrovTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +563,7 @@
 				AD1A7F6F1C66E7FE00A88349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD1A7F701C66E7FE00A88349 /* Build configuration list for PBXNativeTarget "TwitterTrovUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +572,7 @@
 				AD1A7F721C66E7FE00A88349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
