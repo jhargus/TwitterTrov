@@ -36,25 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if AppManager.getLoggedInUserName() == nil {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
-                //this should never be null. If it is I can't even present an alert
-                if let topController = AppManager.getTopViewController() {
-                    
-                    if topController.isKindOfClass(LoginViewController) {
-                        return
-                    }
-                    
-                    let LoginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginController")
-                    
-                    topController.presentViewController(LoginController, animated: true, completion: nil)
-                    
-                }
-            })
-            
-            
-        }
+        AppManager.checkForLogin()
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -28,9 +28,40 @@ class TwitterTrovUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testEmptyLogin() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.buttons["Login"].tap()
+        XCTAssert(app.alerts["Login Failed"].exists)
+        app.alerts["Login Failed"].collectionViews.buttons["OK"].tap()
+        
+        
+    }
+    
+    func testCreateUserPasswordMismatch() {
+        
+        let app = XCUIApplication()
+        app.buttons["Create Account"].tap()
+        
+        let usernameTextField = app.textFields["Username"]
+        usernameTextField.tap()
+        usernameTextField.typeText("Test")
+        
+        let passwordTextField = app.textFields["Password"]
+        passwordTextField.tap()
+        passwordTextField.tap()
+        passwordTextField.typeText("1234")
+        
+        let confirmPasswordTextField = app.textFields["Confirm Password"]
+        confirmPasswordTextField.tap()
+        confirmPasswordTextField.tap()
+        confirmPasswordTextField.typeText("12345")
+        app.buttons["Save"].tap()
+        XCTAssert(app.alerts["Password Mismatch"].exists)
+        app.alerts["Password Mismatch"].collectionViews.buttons["OK"].tap()
+        
     }
     
 }

@@ -50,7 +50,7 @@ struct AppManager {
     
     static func showSimpleAlert(title: String, message: String) {
         
-        let alert = UIAlertController(title: "Login Failed", message: "Username and password are required in order to login.", preferredStyle: .Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         let cancel = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
         
@@ -60,6 +60,34 @@ struct AppManager {
             //This could produce a nil view controller so this message could get lost. I think it's safe enough
             //for a quick demo project though
             AppManager.getTopViewController()?.presentViewController(alert, animated: true, completion: nil)
+        })
+        
+    }
+    
+    static func checkForLogin() {
+        
+        if AppManager.getLoggedInUserName() == nil {
+            showLogin()
+        }
+        
+    }
+    
+    static func showLogin() {
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            
+            //this should never be null. If it is I can't even present an alert
+            if let topController = AppManager.getTopViewController() {
+                
+                if topController.isKindOfClass(LoginViewController) {
+                    return
+                }
+                
+                let LoginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginController")
+                
+                topController.presentViewController(LoginController, animated: true, completion: nil)
+                
+            }
         })
         
     }

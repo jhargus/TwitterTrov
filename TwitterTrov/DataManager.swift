@@ -71,6 +71,31 @@ struct DataManager {
         
     }
     
+    static func getNewTweets(username: String, sinceDate: NSDate) throws -> [TRVTweets] {
+        
+        do{
+            let context = try DataManager.getMainContext()
+            
+            let fetchRequest = NSFetchRequest(entityName: "TRVTweets")
+            
+            let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            
+            let predicate = NSPredicate(format: "Any self.user.username == %@ AND timeStamp > %@", argumentArray: [username, sinceDate])
+            fetchRequest.predicate = predicate
+            
+            if let results : [TRVTweets] = try context.executeFetchRequest(fetchRequest) as? [TRVTweets] {
+                return results
+            } else {
+                return [TRVTweets]()
+            }
+            
+        } catch let error {
+            throw error
+        }
+        
+    }
+    
     // MARK: Data Functions
     static func validateUser(username: String, password: String) throws -> Bool {
         do {
