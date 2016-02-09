@@ -2,14 +2,15 @@
 //  TwitterTrovUITests.swift
 //  TwitterTrovUITests
 //
-//  Created by Jake Hargus on 2/6/16.
+//  Created by Jake Hargus on 2/8/16.
 //  Copyright © 2016 Blue Raccoon Software. All rights reserved.
 //
 
 import XCTest
 
 class TwitterTrovUITests: XCTestCase {
-        
+    
+    //I've never done these either, but I wanted to try testing out a few of the obvious validation cases
     override func setUp() {
         super.setUp()
         
@@ -28,40 +29,44 @@ class TwitterTrovUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testEmptyLogin() {
+    func testEmptyCredentials() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
+        
         let app = XCUIApplication()
         app.buttons["Login"].tap()
-        XCTAssert(app.alerts["Login Failed"].exists)
+        XCTAssertTrue(app.alerts["Login Failed"].exists)
+        app.alerts["Login Failed"].collectionViews.buttons["OK"].tap()
+
+    }
+    
+    func testEmptyPassword(){
+        
+        let app = XCUIApplication()
+        let usernameTextField = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.TextField)["Username"]
+        usernameTextField.tap()
+        usernameTextField.typeText("12345125215125215")
+        app.buttons["Login"].tap()
+        XCTAssertTrue(app.alerts["Login Failed"].exists)
+        app.alerts["Login Failed"].collectionViews.buttons["OK"].tap()
+        
+    }
+    
+    func testEmptyUsername(){
+        
+        
+        let app = XCUIApplication()
+        let usernameTextField = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.childrenMatchingType(.TextField)["Username"]
+        usernameTextField.tap()
+        usernameTextField.typeText("123453")
+        app.buttons["Login"].tap()
+        XCTAssertTrue(app.alerts["Login Failed"].exists)
         app.alerts["Login Failed"].collectionViews.buttons["OK"].tap()
         
         
     }
     
-    func testCreateUserPasswordMismatch() {
-        
-        let app = XCUIApplication()
-        app.buttons["Create Account"].tap()
-        
-        let usernameTextField = app.textFields["Username"]
-        usernameTextField.tap()
-        usernameTextField.typeText("Test")
-        
-        let passwordTextField = app.textFields["Password"]
-        passwordTextField.tap()
-        passwordTextField.tap()
-        passwordTextField.typeText("1234")
-        
-        let confirmPasswordTextField = app.textFields["Confirm Password"]
-        confirmPasswordTextField.tap()
-        confirmPasswordTextField.tap()
-        confirmPasswordTextField.typeText("12345")
-        app.buttons["Save"].tap()
-        XCTAssert(app.alerts["Password Mismatch"].exists)
-        app.alerts["Password Mismatch"].collectionViews.buttons["OK"].tap()
-        
-    }
+    
     
 }
