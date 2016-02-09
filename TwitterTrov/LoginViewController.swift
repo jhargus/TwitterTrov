@@ -82,7 +82,7 @@ class LoginViewController: UIViewController {
             self.txbAddConfirm.text = ""
             self.txbAddPassword.text = ""
             self.txbAddUsername.text = ""
-            
+            self.view.endEditing(true)
             self.vwAddUser.hidden = false
         }
         
@@ -137,6 +137,7 @@ class LoginViewController: UIViewController {
             self.txbUsername.text = ""
             self.txbPassword.text = ""
             self.vwAddUser.hidden = true
+            self.view.endEditing(true)
         }
         
     }
