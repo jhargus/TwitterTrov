@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Automatic">
     <entity name="TRVTweets" representedClassName=".TRVTweets">
         <attribute name="timeStamp" optional="YES" attributeType="Date">
             <userInfo/>
@@ -12,7 +12,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TRVTweets" inverseName="user" inverseEntity="TRVTweets" syncable="YES"/>
+        <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TRVTweets" inverseName="user" inverseEntity="TRVTweets" syncable="YES"/>
     </entity>
     <elements>
         <element name="TRVTweets" positionX="-2430" positionY="-2295" width="128" height="88"/>

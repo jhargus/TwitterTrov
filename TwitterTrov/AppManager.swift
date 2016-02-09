@@ -64,15 +64,7 @@ struct AppManager {
         
     }
     
-    static func checkForLogin() {
-        
-        if AppManager.getLoggedInUserName() == nil {
-            showLogin()
-        }
-        
-    }
-    
-    static func showLogin() {
+    static func showLogin(delegate: LoginViewControllerDelegate?) {
         
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             
@@ -83,7 +75,9 @@ struct AppManager {
                     return
                 }
                 
-                let LoginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginController")
+                let LoginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginController") as! LoginViewController
+                
+                LoginController.delegate = delegate
                 
                 topController.presentViewController(LoginController, animated: true, completion: nil)
                 

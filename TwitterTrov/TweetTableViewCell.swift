@@ -17,7 +17,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet var imgProfile: UIImageView!
     @IBOutlet var vwCard: UIView!
     
-    
+    //setup the cell when the tweet is set
     var tweet : TRVTweets! {
         didSet {
             self.lblName.text = tweet.user?.username ?? ""
@@ -33,6 +33,7 @@ class TweetTableViewCell: UITableViewCell {
         }
     }
 
+    //set the corner radius after awake
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TwitterTrov" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-t7-RoX">
+                                <rect key="frame" x="20" y="46" width="560" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="d27-Ua-IhE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sgu-Ti-aOH">
+                                <rect key="frame" x="282" y="170" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="0bS-PU-Yxc"/>
+                                    <constraint firstAttribute="height" constant="37" id="FuC-Ad-pb7"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-Jc-EOM">
+                                <rect key="frame" x="253" y="215" width="95" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="102-0g-t8l"/>
+                                    <constraint firstAttribute="width" constant="95" id="Ive-Mf-m0S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.3411764706" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mCU-t7-RoX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="26" id="BNP-lW-gLW"/>
+                            <constraint firstItem="Sgu-Ti-aOH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="D8W-6M-uIZ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="mCU-t7-RoX" secondAttribute="bottom" constant="476" id="JXY-7e-nKb"/>
+                            <constraint firstItem="1Fl-Jc-EOM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Oo9-2n-d66"/>
+                            <constraint firstItem="Sgu-Ti-aOH" firstAttribute="top" secondItem="mCU-t7-RoX" secondAttribute="bottom" constant="46" id="RwT-ff-M9i"/>
+                            <constraint firstItem="mCU-t7-RoX" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="TAy-IC-Jfl"/>
+                            <constraint firstItem="1Fl-Jc-EOM" firstAttribute="top" secondItem="Sgu-Ti-aOH" secondAttribute="bottom" constant="8" id="hQQ-Sm-NWn"/>
+                            <constraint firstItem="mCU-t7-RoX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="oD5-7v-nAM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JXY-7e-nKb"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
